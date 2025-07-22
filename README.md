@@ -13,8 +13,7 @@ This is a backend implementation of the KPA ERP Form Submission APIs using Node.
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
-cd kpa-backend
+git clone https://github.com/mdvasim988/backend_api_assignment.git
 ```
 
 ### 2. Install Dependencies
@@ -31,7 +30,8 @@ DB_PORT=5432
 DB_USER=your_postgres_user
 DB_PASS=your_postgres_password
 DB_NAME=kpa_db
-PORT=5000
+PORT=3000
+HOST=localhost
 ```
 
 ### 4. Run the Server
