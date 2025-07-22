@@ -1,0 +1,46 @@
+import pgPromise from "pg-promise";
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const pgp = pgPromise();
+
+const db = pgp({
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    ssl: {
+        rejectUnauthorized: true,
+        ca: `-----BEGIN CERTIFICATE-----
+MIIEUDCCArigAwIBAgIUeofybVKtX+nJJFUts9Ishd8Jwa4wDQYJKoZIhvcNAQEM
+BQAwQDE+MDwGA1UEAww1NzM1MmE0ZGMtYWI0Ny00MWRhLTg5NzAtOWUxMGNjYmQ4
+Zjc0IEdFTiAxIFByb2plY3QgQ0EwHhcNMjUwNzIwMDc1NjA2WhcNMzUwNzE4MDc1
+NjA2WjBAMT4wPAYDVQQDDDU3MzUyYTRkYy1hYjQ3LTQxZGEtODk3MC05ZTEwY2Ni
+ZDhmNzQgR0VOIDEgUHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCC
+AYoCggGBANZJKHliC5hiRILrka9weq+b1gipBMlHlSZ62M8MuTmShPY8KWgPcPAQ
+Qe07pfkNAvYvTJD1IYbwwCtdlxKZRRzbgBAi4RhpYjfj8bPNqUh4C9d/dhYSHkV4
+9Z+8w3ufUkdWfYF0zlZWTXYCyDVrwt4Pj6E+dNwGtkq+Dx/9tsRU3LsMy6XQnE4G
+wpSSY0GnBhFFbz8aZ8otNAIkLqjN+nD8FJtLlf4qaM1YYhjE52ZkyaP2J3CbtIU4
+UoNEAXdTyS7otvABrbnGQDwFQDiYxsdEn4l1DL71359ifE8EFRt7nAefXv8EsVHZ
+L7IwEA42SwilsLZgvr6O+OnaE8a1SKDy/9y4C3jr+FBwaHiuFRKUxQnYyNrJ9ALL
+1muYTL/o9VXq1VeyCm1R9cAGWwXqleungOcJzXByL5OVr14009HhX6Z3kUnHssZ0
+SLAZZpYbRwIDrzhmCM3nI4fm/0l/TUncyjIAgMXgJETnM19GYsfkRkOlunGfbYHP
+GdTbMvQHIwIDAQABo0IwQDAdBgNVHQ4EFgQULiEE8QikJWDs6pQvcbhdRVAtFGcw
+EgYDVR0TAQH/BAgwBgEB/wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQAD
+ggGBAINsE3usR1Ui5yooVyJrz26ocQbveRrmY96g8alee0vqx//yyfnLRMrpwD+0
+D0IZhumdvJLZIyKnaoTSTlhsNqXQx+NVIorSLH8na9IyEALX5VHHcuE6Udo9GAjF
+cZW/GBVtbIg9mu8FaD8Ywt3Wdw/8VULONi51AONacF/TOfCSy92Ip8boHHv3ItoA
+Ru8t0DbGMpU1N6/K7rrsLUQpCg7sQpmIMTxbaFfZygW4lQZp3ZoYYpNrY0m6kG2l
+CEZBj1WpyTg2x6Z/xKB2efhXLahqlfmOLnAZABR8DQqTETgw12KpaNhv7c03Bh+i
+fTPFTyMU0KjpveKsM8P3M9FN2tyjHl4tDaPfdXz1Cztg/GRqM97DBJGlOBDUrfpI
+WC3IIKDFpliR6Ak10+l0OUPw4dEdPoueS9oEXUTxOmwMWuJVhPkNmsJbYztJa6wL
+WwE236uS2lceEIp8WySV9RaY51fhJqaUQVw5Xblw0iGqfWCKJVlQodg9c+FSyQoz
+/ItcZQ==
+-----END CERTIFICATE-----`,
+    },
+});
+
+
+export default db;
